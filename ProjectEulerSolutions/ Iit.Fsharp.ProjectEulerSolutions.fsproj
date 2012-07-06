@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91B57331-B60B-49DB-BA61-36FDEA39B301}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace> Iit.Fsharp.ProjectEulerSolutions</RootNamespace>
+    <UsePartialTypes>false</UsePartialTypes>
+    <AssemblyName>ProjectEulerSolutions</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <OptimizeCode>false</OptimizeCode>
+    <GenerateXmlDoc>false</GenerateXmlDoc>
+    <GenerateTailCalls>false</GenerateTailCalls>
+    <Externalconsole>true</Externalconsole>
+    <GenerateDebugInfo>false</GenerateDebugInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <OptimizeCode>false</OptimizeCode>
+    <GenerateXmlDoc>false</GenerateXmlDoc>
+    <GenerateTailCalls>false</GenerateTailCalls>
+    <Externalconsole>true</Externalconsole>
+    <GenerateDebugInfo>false</GenerateDebugInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Ninject">
+      <HintPath>..\lib\Ninject-3.0.1.10-release-mono-4.0\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator.NinjectAdapter">
+      <HintPath>..\lib\Ninject-3.0.1.10-release-mono-4.0\extensions\CommonServiceLocator.NinjectAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Factory">
+      <HintPath>..\lib\Ninject.Extensions.Factory-3.0.1.0-release-mono-4.0\Ninject.Extensions.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.NLogIntegration">
+      <HintPath>..\lib\Ninject.Extensions.Factory-3.0.1.0-release-mono-4.0\DynamicProxy\lib\Castle.Services.Logging.NLogIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration">
+      <HintPath>..\lib\Ninject.Extensions.Factory-3.0.1.0-release-mono-4.0\DynamicProxy\lib\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\lib\Ninject.Extensions.Factory-3.0.1.0-release-mono-4.0\DynamicProxy\lib\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions">
+      <HintPath>..\lib\Ninject.Extensions.Conventions-3.0.0.11-release-mono-4.0\Ninject.Extensions.Conventions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.fs" />
+    <Compile Include="Problem001.fs" />
+    <Compile Include="IProblemSolution.fs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="PrefixedHierarchical" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>
