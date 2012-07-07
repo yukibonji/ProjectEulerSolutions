@@ -14,7 +14,7 @@ type Problem002() =
             match fibValue with
                 | x when x <= maxValue -> x :: generate (i+1)
                 | _ -> []
-        generate 0sie
+        generate 0
     
     let even x = (x % 2) = 0
     let result () =
