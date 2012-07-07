@@ -1,28 +1,30 @@
 namespace Iit.Fsharp.ProjectEulerSolutions
 open System.Linq
 
-type Problem002() =
-    let rec fib n =
-        match n with
-            | 0 -> 1
-            | 1 -> 2
-            | n -> fib (n-1) + fib (n-2)
-    
-    let fibUntil maxValue =
-        let rec generate i =
-            let fibValue = fib i
-            match fibValue with
-                | x when x <= maxValue -> x :: generate (i+1)
-                | _ -> []
-        generate 0
-    
-    let even x = (x % 2) = 0
-    let result () =
-        raise (System.Exception())
-        fibUntil 4000000
-        |> List.filter even
-        |> List.sum
+type Problem003() =
+
+    let rec sieve list = 
+        let relPrime divisor dividend = not ((dividend % divisor) = 0L)
+        match list with
+            | head::tail -> head :: (sieve (tail |> List.filter (relPrime head)))
+            | [] -> []
+
+    let maxPrime (number: int64) = sqrt (float number) |> System.Math.Ceiling |> int64
+
+    let sieveFor number =
+        sieve [2L..(maxPrime number)]
+    let factor number =
+        let sieve = sieveFor number
+        let rec reduce sieve number = 
+            match sieve with
+                | head::tail when (number % head) = 0L -> head :: (reduce sieve (number / head))
+                | head::tail when head > (maxPrime number) -> [number]
+                | head::tail -> reduce tail number
+                | [] -> [number]
+        reduce sieve number |> List.filter ((<) 1L)
+
+    let result () = factor 600851475143L |> List.max |> int
 
     interface IProblemSolution with
-        member x.ProblemId = 2
+        member x.ProblemId = 3
         member x.SolutionAlgorithm with get () = result

@@ -1,27 +1,22 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectEulerSolutions/Program.fs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectEulerSolutions/Problem003.fs">
     <Files>
-      <File FileName="ProjectEulerSolutions/Program.fs" Line="13" Column="31" />
-      <File FileName="ProjectEulerSolutions/Problem001.fs" Line="7" Column="44" />
-      <File FileName="ProjectEulerSolutions/IProblemSolution.fs" Line="5" Column="65" />
+      <File FileName="ProjectEulerSolutions/Problem003.fs" Line="5" Column="1" />
+      <File FileName="ProjectEulerSolutions/Problem002.fs" Line="17" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name=" Iit.Fsharp.ProjectEulerSolutions" expanded="True">
             <Node name="References" expanded="True" />
-            <Node name="Program.fs" selected="True" />
+            <Node name="Problem002.fs" selected="True" />
           </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">
-        <State expanded="True">
-          <Node name=" Iit.Fsharp.ProjectEulerSolutions" expanded="True">
-            <Node name="References" expanded="True">
-              <Node name="/Users/dany/github/local/fsharp/ProjectEulerSolutions/lib/Ninject.Extensions.Conventions-3.0.0.11-release-mono-4.0/Ninject.Extensions.Conventions.dll" selected="True" />
-            </Node>
-          </Node>
+        <State expanded="True" selected="True">
+          <Node name=" Iit.Fsharp.ProjectEulerSolutions" expanded="True" />
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">

@@ -62,6 +62,7 @@
     <Compile Include="Problem001.fs" />
     <Compile Include="IProblemSolution.fs" />
     <Compile Include="Problem002.fs" />
+    <Compile Include="Problem003.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" />
   <ProjectExtensions>
