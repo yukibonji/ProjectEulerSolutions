@@ -18,6 +18,7 @@ type Problem002() =
     
     let even x = (x % 2) = 0
     let result () =
+        raise (System.Exception())
         fibUntil 4000000
         |> List.filter even
         |> List.sum
