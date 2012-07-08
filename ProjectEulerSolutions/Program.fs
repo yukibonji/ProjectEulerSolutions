@@ -9,6 +9,12 @@ kernel.Bind(fun (x: Syntax.IFromSyntax) ->
     x.FromThisAssembly()
      .SelectAllClasses()
      .BindAllInterfaces() |> ignore)
+     
+kernel.Bind<IPrimeNumberProvider>()
+      .To<EratosthenesEager>()
+      .WhenInjectedInto<Problem003>()
+      .WithConstructorArgument("number", 1000L)
+      |> ignore
 
 let interestingProblemIds = [1..391]
 

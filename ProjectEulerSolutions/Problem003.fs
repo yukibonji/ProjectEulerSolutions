@@ -1,20 +1,12 @@
 namespace Iit.Fsharp.ProjectEulerSolutions
 open System.Linq
 
-type Problem003() =
+type Problem003(primeNumberProvider: IPrimeNumberProvider) =
 
-    let rec sieve list = 
-        let relPrime divisor dividend = not ((dividend % divisor) = 0L)
-        match list with
-            | head::tail -> head :: (sieve (tail |> List.filter (relPrime head)))
-            | [] -> []
+    let maxPrime number = sqrt (float number) |> System.Math.Ceiling |> int64
 
-    let maxPrime (number: int64) = sqrt (float number) |> System.Math.Ceiling |> int64
-
-    let sieveFor number =
-        sieve [2L..(maxPrime number)]
     let factor number =
-        let sieve = sieveFor number
+        let sieve = primeNumberProvider.Primes |> Seq.map int64 |> List.ofSeq
         let rec reduce sieve number = 
             match sieve with
                 | head::tail when (number % head) = 0L -> head :: (reduce sieve (number / head))
@@ -22,9 +14,10 @@ type Problem003() =
                 | head::tail -> reduce tail number
                 | [] -> [number]
         reduce sieve number |> List.filter ((<) 1L)
-
-    let result () = factor 600851475143L |> List.max |> int
+ 
+    let result () = factor 1000L |> List.max |> int
 
     interface IProblemSolution with
         member x.ProblemId = 3
         member x.SolutionAlgorithm with get () = result
+        

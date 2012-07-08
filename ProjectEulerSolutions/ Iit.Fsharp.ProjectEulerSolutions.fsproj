@@ -10,6 +10,17 @@
     <RootNamespace> Iit.Fsharp.ProjectEulerSolutions</RootNamespace>
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>ProjectEulerSolutions</AssemblyName>
+    <BuildOrder>
+      <BuildOrder>
+        <String>IPrimeNumberProvider.fs</String>
+        <String>IProblemSolution.fs</String>
+        <String>EratosthenesEager.fs</String>
+        <String>Problem001.fs</String>
+        <String>Problem002.fs</String>
+        <String>Problem003.fs</String>
+        <String>Program.fs</String>
+      </BuildOrder>
+    </BuildOrder>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,6 +74,8 @@
     <Compile Include="IProblemSolution.fs" />
     <Compile Include="Problem002.fs" />
     <Compile Include="Problem003.fs" />
+    <Compile Include="IPrimeNumberProvider.fs" />
+    <Compile Include="EratosthenesEager.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" />
   <ProjectExtensions>

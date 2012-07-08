@@ -1,21 +1,26 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectEulerSolutions/Problem003.fs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectEulerSolutions/EratosthenesEager.fs">
     <Files>
-      <File FileName="ProjectEulerSolutions/Problem003.fs" Line="5" Column="1" />
-      <File FileName="ProjectEulerSolutions/Problem002.fs" Line="17" Column="22" />
+      <File FileName="ProjectEulerSolutions/Problem003.fs" Line="9" Column="21" />
+      <File FileName="ProjectEulerSolutions/IPrimeNumberProvider.fs" Line="4" Column="34" />
+      <File FileName="ProjectEulerSolutions/IProblemSolution.fs" Line="3" Column="24" />
+      <File FileName="ProjectEulerSolutions/Problem001.fs" Line="11" Column="50" />
+      <File FileName="ProjectEulerSolutions/EratosthenesEager.fs" Line="16" Column="39" />
+      <File FileName="ProjectEulerSolutions/Problem002.fs" Line="17" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name=" Iit.Fsharp.ProjectEulerSolutions" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="Problem002.fs" selected="True" />
+            <Node name="EratosthenesEager.fs" selected="True" />
           </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True" selected="True">
+          <Option id="ShowProjects" value="False" />
+          <Option id="GroupByAccess" value="True" />
           <Node name=" Iit.Fsharp.ProjectEulerSolutions" expanded="True" />
         </State>
       </Pad>
