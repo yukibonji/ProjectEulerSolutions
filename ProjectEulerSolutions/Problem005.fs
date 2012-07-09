@@ -18,5 +18,5 @@ type Problem004() =
     let result () = largestPalindrome
 
     interface IProblemSolution with
-        member x.ProblemId = 4
+        member x.ProblemId = 5
         member x.SolutionAlgorithm with get () = result
