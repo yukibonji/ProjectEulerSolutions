@@ -18,6 +18,7 @@
         <String>Problem001.fs</String>
         <String>Problem002.fs</String>
         <String>Problem003.fs</String>
+        <String>Problem004.fs</String>
         <String>Program.fs</String>
       </BuildOrder>
     </BuildOrder>
@@ -76,6 +77,7 @@
     <Compile Include="Problem003.fs" />
     <Compile Include="IPrimeNumberProvider.fs" />
     <Compile Include="EratosthenesEager.fs" />
+    <Compile Include="Problem004.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" />
   <ProjectExtensions>
