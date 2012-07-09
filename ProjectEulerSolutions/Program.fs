@@ -13,7 +13,7 @@ kernel.Bind(fun (x: Syntax.IFromSyntax) ->
 kernel.Bind<IPrimeNumberProvider>()
       .To<EratosthenesEager>()
       .WhenInjectedInto<Problem003>()
-      .WithConstructorArgument("number", 1000L)
+      .WithConstructorArgument("number", 600851475143L)
       |> ignore
 
 let interestingProblemIds = [1..391]

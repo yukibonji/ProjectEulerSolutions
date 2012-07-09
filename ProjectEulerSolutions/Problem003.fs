@@ -15,7 +15,7 @@ type Problem003(primeNumberProvider: IPrimeNumberProvider) =
                 | [] -> [number]
         reduce sieve number |> List.filter ((<) 1L)
  
-    let result () = factor 1000L |> List.max |> int
+    let result () = factor 600851475143L |> List.max |> int
 
     interface IProblemSolution with
         member x.ProblemId = 3
