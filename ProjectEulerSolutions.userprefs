@@ -3,7 +3,11 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="ProjectEulerSolutions/Program.fs">
     <Files>
       <File FileName="ProjectEulerSolutions/Program.fs" Line="1" Column="1" />
-      <File FileName="ProjectEulerSolutions/Problem004.fs" Line="1" Column="1" />
+      <File FileName="ProjectEulerSolutions/Problem004.fs" Line="21" Column="31" />
+      <File FileName="ProjectEulerSolutions/Problem003.fs" Line="8" Column="1" />
+      <File FileName="ProjectEulerSolutions/Problem005.fs" Line="14" Column="9" />
+      <File FileName="ProjectEulerSolutions/Problem002.fs" Line="17" Column="19" />
+      <File FileName="ProjectEulerSolutions/Problem001.fs" Line="11" Column="50" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

@@ -1,21 +1,37 @@
 namespace Iit.Fsharp.ProjectEulerSolutions
 open System.Linq
 
-type Problem004() =
-    let isSymmetric sequence =
-        let orig = List.ofSeq sequence
-        let reversed = List.rev orig
-        orig = reversed
+type Problem005() =
+    let primes = [2; 3; 5; 7; 11; 13; 17; 19]
+
+    let factor number =
+        let rec reduce sieve number = 
+            match sieve with
+                | head::tail when (number % head) = 0 -> head :: (reduce sieve (number / head))
+                | head::tail -> reduce tail number
+                | [] -> [number]
+        reduce primes number |> List.filter ((<) 1) |> Seq.countBy id |> List.ofSeq
         
-    let isPalindrome number = List.ofSeq (number.ToString()) |> isSymmetric
+    let primeFactorsWithOccurences list = 
+        list
+        |> List.map factor
+        |> List.collect id
+        |> Seq.groupBy (fun (x, y) -> x)
+        |> List.ofSeq
+        |> List.map (fun (x, y) -> y |> Seq.maxBy (fun (a, b) -> b))
 
-    let largestPalindrome =
-        let left = [999..-1..100]
-        let right = [999..-1..100]
-        let findLargestPalindrome n = List.tryFind isPalindrome (List.map (fun x -> n * x) right)
-        List.map findLargestPalindrome left |> List.max |> Option.get
+    let kgv list = 
+        let rec pow (basis, exponent) = 
+            match exponent with
+                | 0 -> 1
+                | n -> basis * (pow (basis, exponent - 1))
+        let rec multiply list = 
+            match list with
+                | head::tail -> pow head * (multiply tail)
+                | [] -> 1
+        multiply (primeFactorsWithOccurences list)
 
-    let result () = largestPalindrome
+    let result () = kgv [2..20]
 
     interface IProblemSolution with
         member x.ProblemId = 5
