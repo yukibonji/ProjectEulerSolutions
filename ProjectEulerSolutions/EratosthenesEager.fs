@@ -8,9 +8,10 @@ type EratosthenesEager(number: int64) =
         let rec sieveNext number =
             if number >= list.Length then
                 ()
-            if list.[number] = true then
+            elif list.[number] = true then
                 markOff number
-            sieveNext (number + 1)
+            else
+                sieveNext (number + 1)
         sieveNext 2
         list
 
