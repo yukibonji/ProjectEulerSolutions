@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -71,17 +71,17 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.fs" />
-    <Compile Include="Problem001.fs" />
     <Compile Include="IProblemSolution.fs" />
+    <Compile Include="IPrimeNumberProvider.fs" />
+    <Compile Include="Problem001.fs" />
     <Compile Include="Problem002.fs" />
     <Compile Include="Problem003.fs" />
-    <Compile Include="IPrimeNumberProvider.fs" />
     <Compile Include="EratosthenesEager.fs" />
     <Compile Include="Problem004.fs" />
     <Compile Include="Problem005.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" />
+  <Import Project="C:\Program Files (x86)\Microsoft F#\v4.0\Microsoft.FSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
