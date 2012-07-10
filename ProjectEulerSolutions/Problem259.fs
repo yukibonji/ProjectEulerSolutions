@@ -38,12 +38,12 @@ type Problem259() =
                 yield! reach reachableNumbers (+) (left, right) 
                 yield! reach reachableNumbers (*) (left, right) 
                 yield! reach reachableNumbers (/) (left, right) 
-        }
+        } |> Seq.distinct
 
 
     let reachableIntegers list =
         reachableNumbers list
-        |> Seq.filter (fun value -> value.Denominator = 1I)
+        |> Seq.filter (fun value -> value.IsPositive && value.Denominator = 1I)
         |> Seq.map (fun value -> value.Numerator)
         |> Seq.sum
 
