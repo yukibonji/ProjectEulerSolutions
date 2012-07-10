@@ -73,12 +73,13 @@
   <ItemGroup>
     <Compile Include="IProblemSolution.fs" />
     <Compile Include="IPrimeNumberProvider.fs" />
+    <Compile Include="EratosthenesEager.fs" />
     <Compile Include="Problem001.fs" />
     <Compile Include="Problem002.fs" />
     <Compile Include="Problem003.fs" />
-    <Compile Include="EratosthenesEager.fs" />
     <Compile Include="Problem004.fs" />
     <Compile Include="Problem005.fs" />
+    <Compile Include="Problem259.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <Import Project="C:\Program Files (x86)\Microsoft F#\v4.0\Microsoft.FSharp.targets" />
