@@ -46,6 +46,12 @@
     <GenerateDebugInfo>false</GenerateDebugInfo>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FSharp.PowerPack">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\FSharpPowerPack-1.9.9.9\bin\FSharp.PowerPack.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.PowerPack.Parallel.Seq">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\FSharpPowerPack-1.9.9.9\bin\FSharp.PowerPack.Parallel.Seq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="Ninject">
       <HintPath>..\lib\Ninject-3.0.1.10-release-mono-4.0\Ninject.dll</HintPath>
@@ -69,6 +75,7 @@
       <HintPath>..\lib\Ninject.Extensions.Conventions-3.0.0.11-release-mono-4.0\Ninject.Extensions.Conventions.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IProblemSolution.fs" />

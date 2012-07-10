@@ -1,5 +1,7 @@
 ﻿namespace Iit.Fsharp.ProjectEulerSolutions
 open System.Linq
+open Microsoft.FSharp.Math
+open Microsoft.FSharp.Collections
 
 type Problem259() =
     /// enumerates partitions of a list of non-empty left and right parts
@@ -20,11 +22,33 @@ type Problem259() =
         let rec cat n list =
             match list with
                 | [] -> n
-                | h::t -> cat (10 * n + h) t
-        cat 0 list
+                | h::t -> cat (10N * n + h) t
+        cat 0N list
 
-    let result () = 123
+    let rec reachableNumbers list = 
+        let reach reachableNumbers operator (left, right) = 
+            seq {
+                for l in reachableNumbers left do
+                for r in reachableNumbers right do
+                yield operator l r
+            }
+        seq {          
+            yield number list 
+            for (left, right) in partitions list do
+                yield! reach reachableNumbers (+) (left, right) 
+                yield! reach reachableNumbers (*) (left, right) 
+                yield! reach reachableNumbers (/) (left, right) 
+        } 
+
+
+    let reachableIntegers list =
+        reachableNumbers list
+        |> Seq.filter (fun value -> value.Denominator = 1I)
+        |> Seq.map (fun value -> value.Numerator)
+        |> Seq.sum
+
+    let result () = reachableIntegers [1N..8N]
 
     interface IProblemSolution with
-        member x.ProblemId = 5
+        member x.ProblemId = 259
         member x.SolutionAlgorithm with get () = result

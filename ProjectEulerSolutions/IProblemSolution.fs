@@ -2,4 +2,4 @@ namespace Iit.Fsharp.ProjectEulerSolutions
 
 type IProblemSolution =
     abstract ProblemId : int
-    abstract SolutionAlgorithm : unit -> (unit -> int) with get 
+    abstract SolutionAlgorithm : unit -> (unit -> bigint) with get 

@@ -31,7 +31,7 @@ type Problem005() =
                 | [] -> 1
         multiply (primeFactorsWithOccurences list)
 
-    let result () = kgv [2..20]
+    let result () = bigint(kgv [2..20])
 
     interface IProblemSolution with
         member x.ProblemId = 5

@@ -18,11 +18,15 @@ kernel.Bind<IPrimeNumberProvider>()
 
 let interestingProblemIds = [1..391]
 
-let results = new Dictionary<int, unit -> int>()
+let results = new Dictionary<int, unit -> bigint>()
 
 kernel.GetAll<IProblemSolution>()
 |> Seq.iter (fun solution -> results.Add (solution.ProblemId, solution.SolutionAlgorithm))
 
+let execute problemId =
+    let value = (results.[problemId]()).ToString()
+    printfn "Problem #%d has the solution %s" problemId value
+
 interestingProblemIds
     |> Seq.filter results.ContainsKey
-    |> Seq.iter (fun problemId -> printfn "Problem #%d has the solution %d" problemId (results.[problemId]()))
+    |> Seq.iter execute

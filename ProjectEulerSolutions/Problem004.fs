@@ -15,7 +15,7 @@ type Problem004() =
         let findLargestPalindrome n = List.tryFind isPalindrome (List.map (fun x -> n * x) right)
         List.map findLargestPalindrome left |> List.max |> Option.get
 
-    let result () = largestPalindrome
+    let result () = bigint (largestPalindrome)
 
     interface IProblemSolution with
         member x.ProblemId = 4

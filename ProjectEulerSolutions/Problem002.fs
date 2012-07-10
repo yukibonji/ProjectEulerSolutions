@@ -18,9 +18,10 @@ type Problem002() =
     
     let even x = (x % 2) = 0
     let result () =
-        fibUntil 4000000
+        bigint (fibUntil 4000000
         |> List.filter even
-        |> List.sum
+        |> List.sum)
+        
 
     interface IProblemSolution with
         member x.ProblemId = 2
