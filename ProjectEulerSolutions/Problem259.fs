@@ -38,7 +38,7 @@ type Problem259() =
                 yield! reach reachableNumbers (+) (left, right) 
                 yield! reach reachableNumbers (*) (left, right) 
                 yield! reach reachableNumbers (/) (left, right) 
-        } 
+        }
 
 
     let reachableIntegers list =
@@ -47,7 +47,7 @@ type Problem259() =
         |> Seq.map (fun value -> value.Numerator)
         |> Seq.sum
 
-    let result () = reachableIntegers [1N..8N]
+    let result () = reachableIntegers [1N..9N]
 
     interface IProblemSolution with
         member x.ProblemId = 259

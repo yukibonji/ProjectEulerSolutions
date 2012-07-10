@@ -30,3 +30,5 @@ let execute problemId =
 interestingProblemIds
     |> Seq.filter results.ContainsKey
     |> Seq.iter execute
+
+System.Console.ReadKey() |> ignore
