@@ -1,5 +1,6 @@
 namespace Iit.Fsharp.ProjectEulerSolutions
 open System.Linq
+open Iit.Fsharp.Toolkit.Core
 
 type Problem002() =
     let rec fib n =
@@ -10,7 +11,7 @@ type Problem002() =
     
     let fibUntil maxValue =
         let rec generate i =
-            let fibValue = fib i
+            let fibValue = cache fib i
             match fibValue with
                 | x when x <= maxValue -> x :: generate (i+1)
                 | _ -> []

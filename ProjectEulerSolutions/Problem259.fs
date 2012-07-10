@@ -2,6 +2,7 @@
 open System.Linq
 open Microsoft.FSharp.Math
 open Microsoft.FSharp.Collections
+open Iit.Fsharp.Toolkit.Core
 
 type Problem259() =
     /// enumerates partitions of a list of non-empty left and right parts
@@ -42,7 +43,7 @@ type Problem259() =
 
 
     let reachableIntegers list =
-        reachableNumbers list
+        cache reachableNumbers list
         |> Seq.filter (fun value -> value.IsPositive && value.Denominator = 1I)
         |> Seq.map (fun value -> value.Numerator)
         |> Seq.sum
