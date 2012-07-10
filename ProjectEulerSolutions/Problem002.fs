@@ -3,15 +3,15 @@ open System.Linq
 open Iit.Fsharp.Toolkit.Core
 
 type Problem002() =
-    let rec fib n =
+    let rec fib = cache (fun n ->
         match n with
             | 0 -> 1
             | 1 -> 2
-            | n -> fib (n-1) + fib (n-2)
+            | n -> fib (n-1) + fib (n-2)) id
     
     let fibUntil maxValue =
         let rec generate i =
-            let fibValue = cache fib i
+            let fibValue = fib i
             match fibValue with
                 | x when x <= maxValue -> x :: generate (i+1)
                 | _ -> []

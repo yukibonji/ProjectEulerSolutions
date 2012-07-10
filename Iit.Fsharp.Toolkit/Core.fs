@@ -4,15 +4,16 @@ open System.Collections.Generic
 open System.Linq
 module Core =
 
-    let cache f =
+    let cache f hashSelector =
         let valueCache = new Dictionary<_,_>()
         fun x ->
-            let ok, result = valueCache.TryGetValue(x)
+            let key = hashSelector x
+            let ok, result = valueCache.TryGetValue(key)
             if ok then
                 result
             else
-                //printf "%A has " x
+//              printf "%A has " key
                 let result = f x
-                valueCache.[x] <- result
-                //printfn "%d elements" (Set valueCache.[x]).Count
+                valueCache.[key] <- result
+//              printfn "%d elements" (Set valueCache.[key]).Count
                 result

@@ -19,11 +19,11 @@ type Problem259() =
         }
 
     /// creates a number from a list of digits
-    let number list =
-        let rec cat n list =
+    let number list = 
+        let rec cat = cache (fun n list ->
             match list with
                 | [] -> n
-                | h::t -> cat (10N * n + h) t
+                | h::t -> cat (10N * n + h) t) id
         cat 0N list
 
     let rec reachableNumbers = 
@@ -45,7 +45,7 @@ type Problem259() =
                     yield! reach reachableNumbers (/) (left, right) 
                     yield! reach reachableNumbers (-) (left, right) 
             } |> PSeq.distinct |> PSeq.toList
-        result
+        cache result id 
 
 
     let reachableIntegers list =
