@@ -35,6 +35,7 @@
     <GenerateTailCalls>false</GenerateTailCalls>
     <Externalconsole>true</Externalconsole>
     <GenerateDebugInfo>false</GenerateDebugInfo>
+    <OtherFlags>--nowarn:40</OtherFlags>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>

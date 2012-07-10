@@ -11,6 +11,8 @@ module Core =
             if ok then
                 result
             else
+                //printf "%A has " x
                 let result = f x
                 valueCache.[x] <- result
+                //printfn "%d elements" (Set valueCache.[x]).Count
                 result

@@ -26,27 +26,33 @@ type Problem259() =
                 | h::t -> cat (10N * n + h) t
         cat 0N list
 
-    let rec reachableNumbers list = 
+    let rec reachableNumbers = 
         let reach reachableNumbers operator (left, right) = 
             seq {
                 for l in reachableNumbers left do
                 for r in reachableNumbers right do
-                yield operator l r
-            }
-        seq {          
-            yield number list 
-            for (left, right) in partitions list do
-                yield! reach reachableNumbers (+) (left, right) 
-                yield! reach reachableNumbers (*) (left, right) 
-                yield! reach reachableNumbers (/) (left, right) 
-        } |> Seq.distinct
+                let tryExecute f =
+                    fun x y ->
+                        try Some(f x y) with | _ -> None
+                yield tryExecute operator l r
+            } |> PSeq.choose id
+        let result list = 
+            seq {          
+                yield number list
+                for (left, right) in partitions list do
+                    yield! reach reachableNumbers (+) (left, right) 
+                    yield! reach reachableNumbers (*) (left, right) 
+                    yield! reach reachableNumbers (/) (left, right) 
+                    yield! reach reachableNumbers (-) (left, right) 
+            } |> PSeq.distinct |> PSeq.toList
+        result
 
 
     let reachableIntegers list =
-        cache reachableNumbers list
-        |> Seq.filter (fun value -> value.IsPositive && value.Denominator = 1I)
-        |> Seq.map (fun value -> value.Numerator)
-        |> Seq.sum
+        reachableNumbers list
+        |> PSeq.filter (fun value -> value.IsPositive && value.Denominator = 1I)
+        |> PSeq.map (fun value -> value.Numerator)
+        |> PSeq.reduce (+)
 
     let result () = reachableIntegers [1N..9N]
 
