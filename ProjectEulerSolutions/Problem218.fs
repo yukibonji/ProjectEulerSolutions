@@ -6,6 +6,7 @@ open Iit.Fsharp.Toolkit.Core
 
 type Problem218() =
     let triplesFor u =
+        if u % 5000 = 0 then printf "."
         let swap (x, y, z) = 
             match (x, y, z) with
                 | (x, y, z) when x < y -> (y, x, z)
@@ -14,16 +15,20 @@ type Problem218() =
         |> Seq.map (fun v -> (u*u - v*v, 2*u*v, u*u + v*v))
         |> Seq.map swap
 
-    let triples =
-        seq {2..5000}
+    let triples = 
+        seq {2..50000000}
         |> PSeq.collect triplesFor
-        |> List.ofSeq
     
     let perfectTriangles =
         let toLong (x, y, z) = (int64 x, int64 y, int64 z)
         let generate (x, y, z) = (x*x - y*y, 2L*x*y, x*x + y*y)
         let primitive (x, y, z) = gcd x y = 1L  
-        triples |> PSeq.map toLong |> PSeq.map generate |> PSeq.filter primitive
+        triples
+        |> PSeq.map toLong
+        |> PSeq.map generate 
+        |> PSeq.filter primitive
+        |> PSeq.filter (fun (_, _, z) -> z <= 10000000000000000L)
+
 
     let notSuperPerfectTriangles list =
         list
@@ -32,10 +37,9 @@ type Problem218() =
     let goodTriangles =
         perfectTriangles
         |> notSuperPerfectTriangles
-        |> PSeq.filter (fun (_, _, z) -> z <= 10000000000000000L)
 
     let result () = 
-        bigint (goodTriangles |> PSeq.length)
+        bigint (goodTriangles |> Seq.length)
 
     interface IProblemSolution with
         member x.ProblemId = 218
