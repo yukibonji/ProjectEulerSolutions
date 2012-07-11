@@ -16,5 +16,5 @@ module Core =
                 result
 
     let rec gcd x y =
-        if y = 0 then x
+        if y = 0L then x
         else gcd y (x % y)

@@ -5,34 +5,37 @@ open Microsoft.FSharp.Collections
 open Iit.Fsharp.Toolkit.Core
 
 type Problem218() =
-    let primitiveTriangles u = seq {u-1..-2..1} |> Seq.filter (fun x -> gcd u x = 1)
+    let triplesFor u =
+        let swap (x, y, z) = 
+            match (x, y, z) with
+                | (x, y, z) when x < y -> (y, x, z)
+                | (x, y, z) -> (x, y, z)
+        seq {1..u-1}
+        |> Seq.map (fun v -> (u*u - v*v, 2*u*v, u*u + v*v))
+        |> Seq.map swap
 
-    let isSquare n = 
-        sqrt (float n) % 1.0 = 0.0 
-
-    let perfectTriangles u =
-        let longU = int64 u
-        let getTriple v = (longU*longU - v*v, 2L*longU*v, longU*longU + v*v)
-        primitiveTriangles u
-        |> Seq.map int64
-        |> Seq.filter (fun x -> isSquare (x*x + longU*longU))
-        |> Seq.map getTriple
+    let triples =
+        seq {2..5000}
+        |> PSeq.collect triplesFor
+        |> List.ofSeq
     
+    let perfectTriangles =
+        let toLong (x, y, z) = (int64 x, int64 y, int64 z)
+        let generate (x, y, z) = (x*x - y*y, 2L*x*y, x*x + y*y)
+        let primitive (x, y, z) = gcd x y = 1L  
+        triples |> PSeq.map toLong |> PSeq.map generate |> PSeq.filter primitive
+
     let notSuperPerfectTriangles list =
-        list |> Seq.filter (fun (x,y,_) -> x*y % 6L <> 0L || x*y % 28L <> 0L)
+        list
+        |> PSeq.filter (fun (x,y,_) -> (x*y/2L) % 6L <> 0L || (x*y/2L) % 28L <> 0L)
     
-    let goodTriangles n =
-        perfectTriangles n
+    let goodTriangles =
+        perfectTriangles
         |> notSuperPerfectTriangles
-        |> Seq.filter (fun (_, _, z) -> z <= 10000000000000000L)
+        |> PSeq.filter (fun (_, _, z) -> z <= 10000000000000000L)
 
     let result () = 
-        bigint (
-            seq {1..10000000}
-            |> PSeq.collect goodTriangles
-            |> PSeq.length)
-
-        
+        bigint (goodTriangles |> PSeq.length)
 
     interface IProblemSolution with
         member x.ProblemId = 218
