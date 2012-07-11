@@ -3,7 +3,6 @@
 open System.Collections.Generic
 open System.Linq
 module Core =
-
     let cache f hashSelector =
         let valueCache = new Dictionary<_,_>()
         fun x ->
@@ -12,8 +11,10 @@ module Core =
             if ok then
                 result
             else
-//              printf "%A has " key
                 let result = f x
                 valueCache.[key] <- result
-//              printfn "%d elements" (Set valueCache.[key]).Count
                 result
+
+    let rec gcd x y =
+        if y = 0 then x
+        else gcd y (x % y)
