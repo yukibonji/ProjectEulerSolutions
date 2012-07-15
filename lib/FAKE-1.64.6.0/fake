@@ -1,2 +1,2 @@
 #!/bin/sh
-mono ProjectEulerSolutions/lib/FAKE-1.64.6.0/FAKE.exe "$@"
+mono lib/FAKE-1.64.6.0/FAKE.exe "$@"
