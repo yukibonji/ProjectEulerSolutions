@@ -4,18 +4,23 @@
 open Fake
 
 let buildDir = @"./build/"
+let appReferences = !! @"**\*.fsproj"
 
-/// Delete all non-source files to have a clean build environment.
 Target "Clean" (fun _ ->
     CleanDir buildDir
 )
 
-/// The default build target.
+Target "BuildApp" (fun _ ->
+    MSBuildRelease buildDir "Build" appReferences
+        |> Log "AppBuild-Output: "
+)
+
 Target "Default" (fun _ ->
     trace "Hello World from FAKE"
 )
 
 "Clean"
+    ==> "BuildApp"
     ==> "Default"
 
 Run "Default"
