@@ -15,6 +15,8 @@ module Core =
                 valueCache.[key] <- result
                 result
 
-    let rec gcd x y =
-        if y = LanguagePrimitives.GenericZero then x
-        else gcd y (x % y)
+    let inline gcd x y =
+        let rec gcd x y = 
+            if y = LanguagePrimitives.GenericZero then x
+            else gcd y (x % y)
+        gcd x y

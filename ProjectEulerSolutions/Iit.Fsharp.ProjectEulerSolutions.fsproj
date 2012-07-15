@@ -35,6 +35,7 @@
     <GenerateDebugInfo>false</GenerateDebugInfo>
     <DefinedSymbols />
     <CustomCommandLine>--nowarn:40</CustomCommandLine>
+    <OtherFlags>--nowarn:40</OtherFlags>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -88,7 +89,8 @@
       <Project>{66c36cee-756d-4c59-90a8-74ede2c1a014}</Project>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(FSharpTargetsPath)\Microsoft.FSharp.Targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
