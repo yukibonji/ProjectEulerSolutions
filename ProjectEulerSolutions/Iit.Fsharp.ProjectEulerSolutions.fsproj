@@ -87,7 +87,7 @@
       <Project>{66c36cee-756d-4c59-90a8-74ede2c1a014}</Project>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="C:\Program Files (x86)\Microsoft F#\v4.0\Microsoft.FSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.FSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
