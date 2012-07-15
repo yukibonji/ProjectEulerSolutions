@@ -1,2 +1,3 @@
 #!/bin/sh
+export MONO_IOMAP=all
 mono lib/FAKE-1.64.6.0/FAKE.exe "$@"
