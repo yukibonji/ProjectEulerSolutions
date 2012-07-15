@@ -5,6 +5,11 @@ Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "Iit.Fsharp.ProjectEulerSolu
 EndProject
 Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "Iit.Fsharp.Toolkit", "Iit.Fsharp.Toolkit\Iit.Fsharp.Toolkit.fsproj", "{66c36cee-756d-4c59-90a8-74ede2c1a014}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B0217CCE-7223-4CD4-AB68-C7BC6C0A0FD1}"
+	ProjectSection(SolutionItems) = preProject
+		build.fsx = build.fsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +19,8 @@ Global
 		{66c36cee-756d-4c59-90a8-74ede2c1a014}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91B57331-B60B-49DB-BA61-36FDEA39B301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{91B57331-B60B-49DB-BA61-36FDEA39B301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = ProjectEulerSolutions\Iit.Fsharp.ProjectEulerSolutions.fsproj
