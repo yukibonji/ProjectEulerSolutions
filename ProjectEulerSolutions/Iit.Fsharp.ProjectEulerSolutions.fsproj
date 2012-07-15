@@ -2,14 +2,14 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{91B57331-B60B-49DB-BA61-36FDEA39B301}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace> Iit.Fsharp.ProjectEulerSolutions</RootNamespace>
     <UsePartialTypes>false</UsePartialTypes>
-    <AssemblyName>ProjectEulerSolutions</AssemblyName>
+    <AssemblyName>Iit.Fsharp.ProjectEulerSolutions</AssemblyName>
     <BuildOrder>
       <BuildOrder>
         <String>IPrimeNumberProvider.fs</String>
@@ -25,26 +25,12 @@
       </BuildOrder>
     </BuildOrder>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <OutputPath>bin\Debug</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <OptimizeCode>false</OptimizeCode>
-    <GenerateXmlDoc>false</GenerateXmlDoc>
-    <GenerateTailCalls>false</GenerateTailCalls>
-    <Externalconsole>true</Externalconsole>
-    <GenerateDebugInfo>false</GenerateDebugInfo>
-    <OtherFlags>--nowarn:40</OtherFlags>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>none</DebugType>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <OptimizeCode>false</OptimizeCode>
+    <OutputPath>bin\Debug2</OutputPath>
     <GenerateXmlDoc>false</GenerateXmlDoc>
     <GenerateTailCalls>false</GenerateTailCalls>
-    <Externalconsole>true</Externalconsole>
+    <OptimizeCode>false</OptimizeCode>
     <GenerateDebugInfo>false</GenerateDebugInfo>
   </PropertyGroup>
   <ItemGroup>
@@ -96,7 +82,6 @@
     <ProjectReference Include="..\Iit.Fsharp.Toolkit\Iit.Fsharp.Toolkit.fsproj">
       <Name>Iit.Fsharp.Toolkit</Name>
       <Project>{66c36cee-756d-4c59-90a8-74ede2c1a014}</Project>
-      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="C:\Program Files (x86)\Microsoft F#\v4.0\Microsoft.FSharp.targets" />
