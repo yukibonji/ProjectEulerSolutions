@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Iit.Fsharp.ProjectEulerSolutions", "ProjectEulerSolutions\Iit.Fsharp.ProjectEulerSolutions.fsproj", "{91B57331-B60B-49DB-BA61-36FDEA39B301}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Iit.Fsharp.ProjectEulerSolutions", "ProjectEulerSolutions/Iit.Fsharp.ProjectEulerSolutions.fsproj", "{91B57331-B60B-49DB-BA61-36FDEA39B301}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Iit.Fsharp.Toolkit", "Iit.Fsharp.Toolkit\Iit.Fsharp.Toolkit.fsproj", "{66C36CEE-756D-4C59-90A8-74EDE2C1A014}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Iit.Fsharp.Toolkit", "Iit.Fsharp.Toolkit/Iit.Fsharp.Toolkit.fsproj", "{66C36CEE-756D-4C59-90A8-74EDE2C1A014}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
