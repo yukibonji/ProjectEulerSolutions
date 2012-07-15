@@ -3,7 +3,7 @@
 #r "FakeLib.dll"
 open Fake
 
-let buildDir = @"./build/"
+let buildDir = @"build"
 let appReferences = !! @"**/*.fsproj"
 
 Target "Clean" (fun _ ->
