@@ -11,7 +11,7 @@ Target "Clean" (fun _ ->
 )
 
 Target "BuildApp" (fun _ ->
-    MSBuildRelease buildDir "Build" appReferences
+    MSBuildDebug buildDir "Build" appReferences
         |> Log "AppBuild-Output: "
 )
 
