@@ -28,15 +28,43 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>none</DebugType>
-    <OutputPath>bin\Debug2</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <GenerateXmlDoc>false</GenerateXmlDoc>
-    <GenerateTailCalls>false</GenerateTailCalls>
     <OptimizeCode>false</OptimizeCode>
-    <GenerateDebugInfo>false</GenerateDebugInfo>
-    <DefinedSymbols />
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
     <CustomCommandLine>--nowarn:40</CustomCommandLine>
     <OtherFlags>--nowarn:40</OtherFlags>
+    <Tailcalls>false</Tailcalls>
+    <Optimize>false</Optimize>
   </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="PrefixedHierarchical" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Compile Include="IProblemSolution.fs" />
+    <Compile Include="IPrimeNumberProvider.fs" />
+    <Compile Include="EratosthenesEager.fs" />
+    <Compile Include="Problem001.fs" />
+    <Compile Include="Problem002.fs" />
+    <Compile Include="Problem003.fs" />
+    <Compile Include="Problem004.fs" />
+    <Compile Include="Problem005.fs" />
+    <Compile Include="Problem006.fs" />
+    <EmbeddedResource Include="triangle.txt" />
+    <Compile Include="Problem067.fs" />
+    <Compile Include="Problem218.fs" />
+    <Compile Include="Problem259.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Ninject">
@@ -68,36 +96,9 @@
     <Reference Include="FSharp.PowerPack">
       <HintPath>..\lib\FSharpPowerPack-1.9.9.9\bin\FSharp.PowerPack.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="IProblemSolution.fs" />
-    <Compile Include="IPrimeNumberProvider.fs" />
-    <Compile Include="EratosthenesEager.fs" />
-    <Compile Include="Problem001.fs" />
-    <Compile Include="Problem002.fs" />
-    <Compile Include="Problem003.fs" />
-    <Compile Include="Problem004.fs" />
-    <Compile Include="Problem005.fs" />
-    <Compile Include="Problem006.fs" />
-    <Compile Include="Problem218.fs" />
-    <Compile Include="Problem259.fs" />
-    <Compile Include="Program.fs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Iit.Fsharp.Toolkit\Iit.Fsharp.Toolkit.fsproj">
       <Name>Iit.Fsharp.Toolkit</Name>
       <Project>{66c36cee-756d-4c59-90a8-74ede2c1a014}</Project>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
-  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
-  <ProjectExtensions>
-    <MonoDevelop>
-      <Properties>
-        <Policies>
-          <DotNetNamingPolicy DirectoryNamespaceAssociation="PrefixedHierarchical" ResourceNamePolicy="FileFormatDefault" />
-        </Policies>
-      </Properties>
-    </MonoDevelop>
-  </ProjectExtensions>
 </Project>

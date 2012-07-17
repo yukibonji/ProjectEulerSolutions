@@ -20,10 +20,10 @@ type Problem259() =
 
     /// creates a number from a list of digits
     let number list = 
-        let rec cat = cache (fun n list ->
+        let rec cat = cache HashIdentity.Structural (fun n list ->
             match list with
                 | [] -> n
-                | h::t -> cat (10N * n + h) t) id
+                | h::t -> cat (10N * n + h) t)
         cat 0N list
 
     let rec reachableNumbers = 
@@ -45,7 +45,7 @@ type Problem259() =
                     yield! reach reachableNumbers (/) (left, right) 
                     yield! reach reachableNumbers (-) (left, right) 
             } |> PSeq.distinct |> PSeq.toList
-        cache result id 
+        cache HashIdentity.Structural result
 
 
     let reachableIntegers list =

@@ -3,11 +3,11 @@ open System.Linq
 open Iit.Fsharp.Toolkit.Core
 
 type Problem002() =
-    let rec fib = cache (fun n ->
+    let rec fib = cache HashIdentity.Structural (fun n ->
         match n with
             | 0 -> 1
             | 1 -> 2
-            | n -> fib (n-1) + fib (n-2)) id
+            | n -> fib (n-1) + fib (n-2))
     
     let fibUntil maxValue =
         let rec generate i =

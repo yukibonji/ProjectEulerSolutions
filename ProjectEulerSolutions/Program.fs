@@ -16,7 +16,7 @@ kernel.Bind<IPrimeNumberProvider>()
       .WithConstructorArgument("number", 600851475143L)
       |> ignore
 
-let interestingProblemIds = [218]
+let interestingProblemIds = [67]
 
 let results = new Dictionary<int, unit -> bigint>()
 

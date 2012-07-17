@@ -3,16 +3,15 @@
 open System.Collections.Generic
 open System.Linq
 module Core =
-    let cache f hashSelector =
-        let valueCache = new Dictionary<_,_>()
+    let cache (hashIdentity : IEqualityComparer<_>) f =
+        let valueCache = new Dictionary<_,_>(hashIdentity)
         fun x ->
-            let key = hashSelector x
-            let ok, result = valueCache.TryGetValue(key)
+            let ok, result = valueCache.TryGetValue(x)
             if ok then
                 result
             else
                 let result = f x
-                valueCache.[key] <- result
+                valueCache.[x] <- result
                 result
 
     let inline gcd x y =
