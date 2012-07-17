@@ -13,9 +13,9 @@ Target "Clean" (fun _ ->
 )
 
 Target "BuildApp" (fun _ ->
-  // MSBuildDebug buildDir "Build" appReferences
-  //     |> Log "AppBuild-Output: "
-   [] |> ignore
+    MSBuildDebug buildDir "Build" appReferences
+       |> Log "AppBuild-Output: "
+    [] |> ignore
 )
 
 Target "Default" (fun _ ->
