@@ -3,16 +3,19 @@
 #r "FakeLib.dll"
 open Fake
 
-let buildDir = @"build"
+let buildDir = @"./build/"
+let tempObjFolders = !! @"./**/obj"
 let appReferences = !! @"**/*.fsproj"
 
 Target "Clean" (fun _ ->
     CleanDir buildDir
+    DeleteDirs tempObjFolders
 )
 
 Target "BuildApp" (fun _ ->
-    MSBuildDebug buildDir "Build" appReferences
-        |> Log "AppBuild-Output: "
+  // MSBuildDebug buildDir "Build" appReferences
+  //     |> Log "AppBuild-Output: "
+   [] |> ignore
 )
 
 Target "Default" (fun _ ->
