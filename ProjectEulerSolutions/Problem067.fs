@@ -23,12 +23,13 @@ type Problem067() =
     let tree =
         let createLargerTree (subtrees : Tree<_>[]) (head : _[]) index =
             Node(head.[index], subtrees.[index], subtrees.[index + 1])
-        let rec tree (jaggedPyramid : _[][]) (subtrees : Tree<_>[]) = match Array.length jaggedPyramid with
-            | 0 -> subtrees.Single()
-            | length -> 
-                [| 0 .. length-1 |]
-                |> Array.map (createLargerTree subtrees jaggedPyramid.[0])
-                |> (tree jaggedPyramid.[1..])
+        let rec tree (jaggedPyramid : _[][]) (subtrees : Tree<_>[]) = 
+            match Array.length jaggedPyramid with
+                | 0 -> subtrees.Single()
+                | length -> 
+                    [| 0 .. length-1 |]
+                    |> Array.map (createLargerTree subtrees jaggedPyramid.[0])
+                    |> (tree jaggedPyramid.[1..])
         let revPyramid = Array.rev jaggedPyramid
         let (bottom, top) = (Array.map Root revPyramid.[0], revPyramid.[1..])
         tree top bottom
