@@ -59,6 +59,7 @@
     <Compile Include="Problem004.fs" />
     <Compile Include="Problem005.fs" />
     <Compile Include="Problem006.fs" />
+    <Compile Include="Problem007.fs" />
     <EmbeddedResource Include="triangle.txt" />
     <Compile Include="Problem067.fs" />
     <Compile Include="Problem218.fs" />

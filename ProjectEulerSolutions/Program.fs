@@ -16,7 +16,14 @@ kernel.Bind<IPrimeNumberProvider>()
       .WithConstructorArgument("number", 600851475143L)
       |> ignore
 
-let interestingProblemIds = [1..391]
+kernel.Bind<IPrimeNumberProvider>()
+      .To<EratosthenesEager>()
+      .WhenInjectedInto<Problem007>()
+      .WithConstructorArgument("number", 1000000000000L)
+      |> ignore
+
+
+let interestingProblemIds = [1..100]
 
 let results = new Dictionary<int, unit -> bigint>()
 
