@@ -64,29 +64,34 @@
     <Compile Include="Problem218.fs" />
     <Compile Include="Problem259.fs" />
     <Compile Include="Program.fs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="Ninject">
-      <HintPath>..\lib\Ninject-3.0.1.10-release-mono-4.0\Ninject.dll</HintPath>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.0.0.4001\lib\net40-client\Castle.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="CommonServiceLocator.NinjectAdapter">
-      <HintPath>..\lib\Ninject-3.0.1.10-release-mono-4.0\extensions\CommonServiceLocator.NinjectAdapter.dll</HintPath>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.0.0.11\lib\net40\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Ninject.Extensions.Factory">
-      <HintPath>..\lib\Ninject.Extensions.Factory-3.0.1.0-release-mono-4.0\Ninject.Extensions.Factory.dll</HintPath>
+      <HintPath>..\packages\Ninject.Extensions.Factory.3.0.1.0\lib\net40\Ninject.Extensions.Factory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="CommonServiceLocator.NinjectAdapter">
+      <HintPath>..\lib\Ninject-3.0.1.10-release-mono-4.0\extensions\CommonServiceLocator.NinjectAdapter.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Services.Logging.NLogIntegration">
       <HintPath>..\lib\Ninject.Extensions.Factory-3.0.1.0-release-mono-4.0\DynamicProxy\lib\Castle.Services.Logging.NLogIntegration.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Services.Logging.Log4netIntegration">
       <HintPath>..\lib\Ninject.Extensions.Factory-3.0.1.0-release-mono-4.0\DynamicProxy\lib\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Core">
-      <HintPath>..\lib\Ninject.Extensions.Factory-3.0.1.0-release-mono-4.0\DynamicProxy\lib\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Ninject.Extensions.Conventions">
-      <HintPath>..\lib\Ninject.Extensions.Conventions-3.0.0.11-release-mono-4.0\Ninject.Extensions.Conventions.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
