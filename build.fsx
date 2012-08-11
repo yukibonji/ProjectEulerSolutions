@@ -4,26 +4,25 @@
 open Fake
 
 let buildDir = @"./build/"
-let tempObjFolders = !! @"./**/obj"
+let tempObjFolders = !+ @"./**/obj" ++ @"./**/bin" |> Scan
 let appReferences = !! @"**/*.fsproj"
 
 Target "Clean" (fun _ ->
     CleanDir buildDir
-    DeleteDirs tempObjFolders
 )
 
-Target "BuildApp" (fun _ ->
+Target "Default" (fun _ ->
     MSBuildDebug buildDir "Build" appReferences
        |> Log "AppBuild-Output: "
     [] |> ignore
 )
 
-Target "Default" (fun _ ->
-    trace "Hello World from FAKE"
+Target "DeleteTempDirs" (fun _ ->
+    DeleteDirs tempObjFolders
 )
 
 "Clean"
-    ==> "BuildApp"
     ==> "Default"
+    ==> "DeleteTempDirs"
 
-Run "Default"
+Run "DeleteTempDirs"
