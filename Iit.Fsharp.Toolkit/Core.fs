@@ -19,3 +19,5 @@ module Core =
             if y = LanguagePrimitives.GenericZero then x
             else gcd y (x % y)
         gcd x y
+
+    let take n list = List.ofSeq (Seq.take n list)
