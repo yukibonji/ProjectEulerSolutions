@@ -23,7 +23,7 @@ kernel.Bind<IPrimeNumberProvider>()
       |> ignore
 
 
-let interestingProblemIds = [1..100]
+let interestingProblemIds = [262]
 
 let results = new Dictionary<int, unit -> bigint>()
 

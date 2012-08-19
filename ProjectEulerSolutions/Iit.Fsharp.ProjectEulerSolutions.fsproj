@@ -64,6 +64,7 @@
     <Compile Include="Problem067.fs" />
     <Compile Include="Problem218.fs" />
     <Compile Include="Problem259.fs" />
+    <Compile Include="Problem262.fs" />
     <Compile Include="Program.fs" />
     <None Include="packages.config" />
   </ItemGroup>
