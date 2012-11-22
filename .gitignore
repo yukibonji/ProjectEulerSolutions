@@ -1,0 +1,13 @@
+.DS_Store
+ProjectEulerSolutions/**/bin/
+*.userprefs
+_Resharper*/
+*.ncrunchsolution
+*.user
+*.suo
+obj/
+*.orig
+packages/
+build/
+bin
+_ncrunch*
